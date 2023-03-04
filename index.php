@@ -12,7 +12,13 @@
     $books = [
         [
             'title' => 'The first book',
-            'Author' => 'The first Author',
+            'Author' => 'Author1',
+            'publish_date' => '1395',
+            'price' => '100000'
+        ],
+        [
+            'title' => 'The new first book',
+            'Author' => 'Author1',
             'publish_date' => '1395',
             'price' => '100000'
         ],
@@ -29,6 +35,18 @@
             'price' => '150000'
         ]
     ];
+    function filterByAuthor($books,$author)
+    {
+        $filteredbook = [];
+        foreach($books as $book)
+        {
+            if($book['Author']==$author)
+            {
+                $filteredbook[] = $book;
+            }
+        }
+        return $filteredbook;
+    }
     ?>
     <h3>Books list</h3>
     <table class="table table-bordered table-dark">
@@ -39,13 +57,14 @@
             <th>Price</th>
         </thead>
         <tbody>
-        <?php foreach($books as $book){ ?>
+        <?php foreach(filterByAuthor($books,'The second Author') as $book): ?>
             <tr>
-                <?php foreach($book as $key=>$value){ ?>
+                <?php foreach($book as $key=>$value): ?>
                     <td><?= $value ?></td>
-                <?php } ?>    
+                <?php endforeach ?>    
             </tr>    
-        <?php } ?>
+        
+        <?php endforeach ?>
         </tbody>
     </table>
 </body>
