@@ -35,25 +35,20 @@
             'price' => 150000
         ]
     ];
-    function filter($books,$fn)
-    {
-        $filteredbook = [];
-        foreach($books as $book)
-        {
-            if($fn($book))
-            {
-                $filteredbook[] = $book;
-            }
-        }
-        return $filteredbook;
-    }
-    $filteredbook = filter($books,function($book){
-        if($book['price'] <=150000)
-        {
-            return true;
-        }
-        return false;
-
+    // function filter($books,$fn)
+    // {
+    //     $filteredbook = [];
+    //     foreach($books as $book)
+    //     {
+    //         if($fn($book))
+    //         {
+    //             $filteredbook[] = $book;
+    //         }
+    //     }
+    //     return $filteredbook;
+    // }
+    $filteredbook = array_filter($books,function($book){
+        return $book['price'] >= 150000;
     })
 
     ?>
