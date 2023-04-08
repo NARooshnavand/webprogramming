@@ -1,4 +1,24 @@
 <?php
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "webprogramming";
+    
+    // Create connection
+    $conn = new mysqli($servername, $username, $password,$dbname);
+    
+    // Check connection
+    if ($conn->connect_error) {
+      die("Connection failed: " . $conn->connect_error);
+    }
+    // exit("Connected successfully");
+    $sql = 'create table books (title VARCHAR(128) NOT NULL,Author VARCHAR(32) NOT NULL, publish_date DATE DEFAULT NULL);';
+    if ($conn->query($sql) === TRUE) {
+        echo "Table Books created successfully";
+      } else {
+        echo "Error creating table: " . $conn->error;
+      }
+      exit();
     $books = [
         [
             'title' => 'The first book',
