@@ -1,9 +1,9 @@
 <?php
-include 'Book.php';
 include 'functions.php';
-$book = new Book();
-$book->title = 'The first title';
-$book->author = 'Author1';
-dd($book);
 
+require('Database.php');
+$db = new Database();
+$books = $db->query("SELECT * FROM books WHERE title LIKE '%book%'")
+            ->fetchAll(PDO::FETCH_ASSOC);
+dd($books);
 ?>
