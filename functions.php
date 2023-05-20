@@ -14,3 +14,11 @@ function abort($code='404')
     http_response_code($code);
     require("views/{$code}.view.php");
 }
+function authorize($condition, $status = Response::FORBIDDEN)
+{
+    if(!$condition)
+    {
+        abort($status);
+    }
+    return true;
+}
