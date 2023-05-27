@@ -2,6 +2,7 @@
 12 ordibehesht : https://aparat.com/v/9Sfao
 16 Ordibehesh  : https://aparat.com/v/Wxnuy
 23 Ordibehesh  : https://aparat.com/v/QLPhA
+6 khordad      : https://aparat.com/v/nd1GB
 23 ordibehesht 
 CRUD create-Read-Update-Delete
 1- Add notes views files.
