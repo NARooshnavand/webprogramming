@@ -3,7 +3,7 @@ require('Database.php');
 $config = require('Config.php');
 $db = new Database($config);
 $id = $_GET['id'];
-$currentUserid = 3;
+$currentUserid = 1;
 $query = "SELECT * FROM notes WHERE id= :id";
 $note = $db->query($query,['id'=>$id])
             ->findOrFail(PDO::FETCH_ASSOC);
