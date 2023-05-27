@@ -21,3 +21,5 @@ Route::get('/', function () {
 //     return view('books');
 // });
 Route::get('/books',[BookController::class,'books']);
+Route::get('/book/create',[BookController::class,'create']);
+Route::post('/book/addbook',[BookController::class,'addbook']);

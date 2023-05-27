@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
+    <a href="/book/create">Add Book</a>
     <h1>books</h1>
 </body>
 </html>
