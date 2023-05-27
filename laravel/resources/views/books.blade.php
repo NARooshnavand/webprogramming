@@ -9,5 +9,12 @@
 <body>
     <a href="/book/create">Add Book</a>
     <h1>books</h1>
+    <ul>
+    @foreach($books as $book)
+    <li>
+        {{ $book->title}} {{$book->author}}
+    </li>
+    @endforeach
+    </ul>
 </body>
 </html>

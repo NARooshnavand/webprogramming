@@ -16,8 +16,9 @@ class BookController extends Controller
     {
         return view('create');
     }
-    public function addbook()
+    public function addbook(Request $request)
     {
-        dd('fffff');
+        Book::create($request->all());
+        return redirect('/books');
     }
 }
